@@ -1,18 +1,18 @@
 {
-    "name": "asciisd/zoho-v3",
+    "name": "muhammadsheraz/zoho-laravel-pack",
     "description": "Laravel Zoho API V3 Package",
     "keywords": [
-        "asciisd",
+        "muhammadsheraz",
         "laravel",
         "zoho",
         "crm"
     ],
-    "homepage": "https://github.com/asciisd/zoho-v3",
+    "homepage": "https://github.com/muhammadsheraz/zoho-laravel-pack",
     "license": "MIT",
     "authors": [
         {
-            "name": "aemaddin",
-            "email": "aemaddin@gmail.com",
+            "name": "muhammadsheraz",
+            "email": "msherazjaved@gmail.com",
             "role": "Developer"
         }
     ],
