@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.2|^8.3",
         "spatie/laravel-package-tools": "^1.14.2",
-        "zohocrm/php-sdk-6.0": "^1.0"
+        "zohocrm/php-sdk-6.0": "8.1.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
