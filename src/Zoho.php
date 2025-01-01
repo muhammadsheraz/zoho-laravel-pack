@@ -8,6 +8,7 @@ use com\zoho\api\logger\Levels;
 use com\zoho\api\logger\LogBuilder;
 use com\zoho\crm\api\dc\AUDataCenter;
 use com\zoho\crm\api\dc\CNDataCenter;
+use com\zoho\crm\api\dc\CADataCenter;
 use com\zoho\crm\api\dc\Environment;
 use com\zoho\crm\api\dc\EUDataCenter;
 use com\zoho\crm\api\dc\INDataCenter;
@@ -79,22 +80,22 @@ class Zoho
             return;
         }
 
-        //Don't initialize if the zoho.token_persistence_path file does not exist
-        if (!file_exists(config('zoho.token_persistence_path'))) {
-            logger()->warning('Zoho token persistence path does not exist, you can run `php artisan zoho:install` to create it.');
-            return;
-        }
+        // //Don't initialize if the zoho.token_persistence_path file does not exist
+        // if (!file_exists(config('zoho.token_persistence_path'))) {
+        //     logger()->warning('Zoho token persistence path does not exist, you can run `php artisan zoho:install` to create it.');
+        //     return;
+        // }
 
-        //Don't initialize if the zoho.token_persistence_path file is empty
-        if (filesize(config('zoho.token_persistence_path')) === 0) {
-            logger()->warning('Zoho token persistence path is empty, you can run `php artisan zoho:authentication` generate token.');
-            return;
-        }
+        // //Don't initialize if the zoho.token_persistence_path file is empty
+        // if (filesize(config('zoho.token_persistence_path')) === 0) {
+        //     logger()->warning('Zoho token persistence path is empty, you can run `php artisan zoho:authentication` generate token.');
+        //     return;
+        // }
 
-        //Don't initialize if the zoho.token_persistence_path file has only one line
-        if (count(file(config('zoho.token_persistence_path'))) === 1) {
-            return;
-        }
+        // //Don't initialize if the zoho.token_persistence_path file has only one line
+        // if (count(file(config('zoho.token_persistence_path'))) === 1) {
+        //     return;
+        // }
 
         $environment = self::$environment ?: self::getDataCenterEnvironment();
         $resourcePath = config('zoho.resourcePath');
@@ -168,6 +169,7 @@ class Zoho
             'INDataCenter' => config('zoho.environment') ? INDataCenter::SANDBOX() : INDataCenter::PRODUCTION(),
             'CNDataCenter' => config('zoho.environment') ? CNDataCenter::SANDBOX() : CNDataCenter::PRODUCTION(),
             'AUDataCenter' => config('zoho.environment') ? AUDataCenter::SANDBOX() : AUDataCenter::PRODUCTION(),
+            'CADataCenter' => config('zoho.environment') ? CADataCenter::SANDBOX() : CADataCenter::PRODUCTION(),
         };
     }
 }
